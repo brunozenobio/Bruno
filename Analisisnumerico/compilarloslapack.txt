@@ -1,0 +1,1 @@
+gfortran -Wall -o punto3 ./Practica3a/punto.f90 -I$HOME/opt/include/lapack95 -L$HOME/opt/lib64 -llapack95 -llapack -lblas
