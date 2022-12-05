@@ -1,0 +1,51 @@
+
+
+*******************************************************************************
+Sun Dec  4 16:55:56 2022
+
+
+FIT:    data read from 'datos5.dat'
+        format = z
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=b*exp(a*x)
+BREAK: Need via and either parameter list or file
+
+*******************************************************************************
+Sun Dec  4 16:55:59 2022
+
+
+FIT:    data read from 'datos5.dat'
+        format = z
+        x range restricted to [1.00000 : 2.00000]
+        #datapoints = 5
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=b*exp(a*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.9177874552e+01   0.00e+00  7.21e+00    1.000000e+00   1.000000e+00
+  12 1.1643418127e-03  -2.16e-04  7.21e-06    5.069551e-01   3.066574e+00
+
+After 12 iterations the fit converged.
+final sum of squares of residuals : 0.00116434
+rel. change during last iteration : -2.16362e-09
+
+degrees of freedom    (FIT_NDF)                        : 3
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0197006
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000388114
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.506955         +/- 0.003831     (0.7556%)
+b               = 3.06657          +/- 0.01949      (0.6356%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.979  1.000 

@@ -1,42 +1,49 @@
 program name
     use iso_fortran_env,only:wp => real64
-    use rk_methods,only:rk4
+    use rk4_methods,only:rk4,euler
     implicit none(type,external)
-    !!Condiciones iniciales
-    real(wp)    :: thetai,vi,ti,g,l,dt,deltat,vtheta,t,theta,tf
-    integer     :: n,i
-    thetai=acos(-1.0_wp)/4.0_wp
-    vi=0.0_wp
-    ti=0.0_wp
-    !!Constantes
+    !!!!!!!!CONSTANTES!!!!!!!!!!!
+    real(wp)        :: l,g,m
+    !!!!!!!!CONDICIONES INICIALES!!!!!!!!!
+    real(wp)        :: veltheta0,y0,t0,tf
+    !!!!!!!VARIABLES DE BUCLES!!!!!!!
+    integer         ::  i
+    !!!!!!!INTERVALOS TEMPORALES!!!!!!!!!
+    real(wp)        :: t,h,k
+    integer         :: numpasos
+    !!!!!!VARIABLE!!!!!!!!!!!!!!!
+    real(wp)        :: y,veltheta,yf
+    !!!!!!!!!!!!DEFINO LAS CONSTANTES
     g=-9.81_wp
     l=1.0_wp
-    !!TiEMPO
-    dt=0.01_wp
-
-
-    n=100000
-    tf=100
-
-    deltat=(tf-ti)/n
-    do i=0,n
-        t=ti+i*deltat
-        call rk4(f,ti,vi,tf,vtheta)
-        !call(h,ti,thetai,tf,theta)
-        write(*,*) theta,vtheta
-    enddo
-
+    m=1.0_wp
+    !!!!!!!!!!!!DEFINO LAS CONDICIONES INICIALES
+    k=0.0_wp
+    veltheta0=0.0_wp
+  
+  
+  
+  
+  
+  
+  
+  
+    y0=1.0_wp
+    tf=10.0_wp
+    h=0.41_wp 
+    t0=k
+    do i = 0, 25, 1
+        t=k+i*h
+        call rk4(f,t0,y0,t,yf)
+        write(*,*) t,yf
+        y0=yf
+        t0=t
+    end do
 contains
-    real(wp) function f(t,x)
-        real(wp), intent(in) :: x,t
-        real(wp)             ::g,l
-            g=-9.81_wp
-            l=1.0_wp
-            f = -g/l*sin(x)
-    end function f    
-    real(wp) function h(t,x)
-        real(wp), intent(in) :: x,t
-            h= x
-    end function h   
+    real(wp) function f(x,y)
+        real(wp), intent(in) :: x,y
+        real(wp) :: g,l
+        f=-5*y
+    end function f
 end program name
 
