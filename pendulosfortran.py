@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import scipy.integrate as integrate
 import matplotlib.animation as animation
-data=pd.read_csv('datospen.dat',header=None, sep = ",",names = [ "t", "x", "y"])
+data=pd.read_csv('datosprk.dat',header=None, sep = ",",names = [ "t", "x", "y"])
 print(data)
 t=data['t']
 x=data['x']
